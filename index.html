@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USC Viterbi AI Community Project (2025-2026)</title>
+  <meta
+    name="description"
+    content="USC Viterbi AI Community Project (2025-2026) shares AI education, community workshops, and outreach experiences for underserved communities."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Outfit', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 35px rgba(88, 221, 255, 0.35)',
+            card: '0 30px 80px rgba(14, 54, 94, 0.22)'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-[#dff7ff] text-slate-800 font-body">
+  <div class="site-shell">
+    <div class="sky-orb orb-a"></div>
+    <div class="sky-orb orb-b"></div>
+    <div class="sky-orb orb-c"></div>
+    <div class="cloud cloud-a"></div>
+    <div class="cloud cloud-b"></div>
+    <div class="cloud cloud-c"></div>
+    <div class="particle-field" id="particleField" aria-hidden="true"></div>
+  </div>
+
+  <header id="floatingNav" class="floating-nav">
+    <div class="glass-nav">
+      <a href="#home" class="nav-brand">
+        <span class="brand-orb" aria-hidden="true"></span>
+        <span>AI Community Project</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home"><span class="nav-icon home"></span><span>Home</span></a>
+        <a href="#mission"><span class="nav-icon mission"></span><span>Mission</span></a>
+        <a href="#projects"><span class="nav-icon projects"></span><span>Projects</span></a>
+        <a href="#interns"><span class="nav-icon interns"></span><span>Interns</span></a>
+        <a href="#games"><span class="nav-icon games"></span><span>AI Games</span></a>
+        <a href="#learn"><span class="nav-icon learn"></span><span>Learn AI</span></a>
+        <a href="#sponsors"><span class="nav-icon sponsors"></span><span>Sponsors</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <aside class="xp-sidebar" aria-label="Quick navigation">
+    <a href="#home" class="sidebar-card sidebar-avatar">
+      <span class="sidebar-avatar-orb" aria-hidden="true"></span>
+      <span class="sidebar-label">Portal</span>
+    </a>
+    <a href="#mission" class="sidebar-card"><span class="sidebar-mini-icon mission"></span><span>Mission</span></a>
+    <a href="#projects" class="sidebar-card"><span class="sidebar-mini-icon projects"></span><span>Projects</span></a>
+    <a href="#interns" class="sidebar-card"><span class="sidebar-mini-icon interns"></span><span>Interns</span></a>
+    <a href="#games" class="sidebar-card"><span class="sidebar-mini-icon games"></span><span>AI Games</span></a>
+    <a href="#learn" class="sidebar-card"><span class="sidebar-mini-icon learn"></span><span>Learn AI</span></a>
+    <a href="#sponsors" class="sidebar-card"><span class="sidebar-mini-icon sponsors"></span><span>Sponsors</span></a>
+  </aside>
+
+  <div class="landing-main">
+    <section id="home" class="landing-hero">
+      <div class="landing-nav reveal">
+      </div>
+
+      <div class="landing-stage">
+        <div class="desktop-artifact globe reveal">
+          <div class="artifact-globe-core"></div>
+        </div>
+        
+        <div class="desktop-artifact buddy reveal">
+          <div class="artifact-buddy back"></div>
+          <div class="artifact-buddy front"></div>
+        </div>
+
+        <div class="hero-plaque reveal">
+          <span class="hero-plaque-kicker">USC Viterbi Outreach</span>
+          <h1>USC Viterbi AI Community Project</h1>
+          <p class="hero-plaque-subtitle">Exploring Artificial Intelligence in the Community</p>
+          <p class="hero-plaque-secondary">Making AI accessible for everyone.</p>
+        </div>
+      </div>
+
+      <div class="landing-divider" aria-hidden="true"></div>
+    </section>
+  </div>
+
+  <div id="portal" class="portal-window">
+    <div class="window-titlebar">
+      <div class="titlebar-left">
+        <span class="titlebar-led" aria-hidden="true"></span>
+        <span>USC Viterbi AI Community Project</span>
+      </div>
+      <div class="titlebar-controls" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span class="close"></span>
+      </div>
+    </div>
+    <div class="window-toolbar">
+      <div class="toolbar-nav">
+        <span class="toolbar-button back" aria-hidden="true"></span>
+        <span class="toolbar-button forward" aria-hidden="true"></span>
+      </div>
+      <div class="toolbar-address">usc-viterbi-ai-community-project.2025-2026</div>
+      <div class="toolbar-actions">
+        <span class="toolbar-pill"></span>
+        <span class="toolbar-pill"></span>
+      </div>
+    </div>
+    
+  <main class="portal-content">
+    <section id="mission" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Mission</span>
+        <h2>AI in the Community!</h2>
+        <p>
+          The USC Viterbi AI Community Project aims to introduce artificial intelligence and emerging technologies to broader communities—especially students and communities that traditionally have less exposure to engineering—through hands-on workshops, demonstrations, and educational outreach. The project focuses on making AI understandable, approachable, and useful by showing how it works in real-world applications while encouraging more diverse participation in engineering and computer science.
+        </p>
+      </div>
+      <div class="mission-layout">
+        <div class="glass-card mission-card reveal">
+          <div class="mission-list">
+            <div>
+              <h3>AI Workshops</h3>
+              <p>Introductory sessions that translate machine learning concepts into tactile, beginner-friendly activities.</p>
+            </div>
+            <div>
+              <h3>Live Demonstrations</h3>
+              <p>Interactive showcases that connect AI perception, automation, and systems control with everyday applications.</p>
+            </div>
+            <div>
+              <h3>Community Education</h3>
+              <p>Outreach events designed for families, K-12 students, and local organizations interested in technology for social good.</p>
+            </div>
+            <div>
+              <h3>AI Literacy</h3>
+              <p>Clear explanations of how AI works, where it appears in daily life, and how communities can shape its future responsibly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card brain-card reveal">
+          <div class="community-illustration" aria-hidden="true">
+            <div class="community-ring ring-one"></div>
+            <div class="community-ring ring-two"></div>
+            <div class="community-person person-top">
+              <span class="person-head"></span>
+              <span class="person-body"></span>
+            </div>
+            <div class="community-person person-left">
+              <span class="person-head"></span>
+              <span class="person-body"></span>
+            </div>
+            <div class="community-person person-right">
+              <span class="person-head"></span>
+              <span class="person-body"></span>
+            </div>
+            <div class="community-person person-bottom">
+              <span class="person-head"></span>
+              <span class="person-body"></span>
+            </div>
+            <div class="community-core"></div>
+          </div>
+          <p class="brain-caption">A program model centered on curiosity, access, and community impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="milestones" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Events</span>
+        <h2>What we're up to!</h2>
+        <p>Upcoming activations, event planning, and community-facing demos throughout the 2025-2026 cycle.</p>
+      </div>
+      <div class="events-layout">
+        <div class="events-left-column">
+          <article class="glass-card event-card reveal">
+            <p class="panel-label">Featured Event</p>
+            <h3>LA Maker Faire</h3>
+            <p class="event-date">Target outreach date: September 20, 2026</p>
+            <p>
+              A public-facing showcase featuring accessible AI demos, creative computing, and student-led conversations about community technology.
+            </p>
+            <div class="countdown-grid" id="countdown" aria-live="polite">
+              <div><span data-unit="days">00</span><small>Days</small></div>
+              <div><span data-unit="hours">00</span><small>Hours</small></div>
+              <div><span data-unit="minutes">00</span><small>Minutes</small></div>
+              <div><span data-unit="seconds">00</span><small>Seconds</small></div>
+            </div>
+          </article>
+          <article class="glass-card event-card reveal event-placeholder-card">
+            <p class="panel-label">Placeholder</p>
+            <h3>Future Event Module</h3>
+            <p>This card is reserved for content you want to add later.</p>
+          </article>
+        </div>
+        <article class="glass-card calendar-card reveal">
+          <p class="panel-label">Project Calendar</p>
+          <h3>Planning Timeline</h3>
+          <div class="calendar-frame">
+            <iframe
+              title="USC Viterbi AI Community Project Calendar"
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=AGENDA&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudjIuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23039BE5"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Projects</span>
+        <h2>Our Projects so Far!</h2>
+        <p>Programs and outreach touchpoints that can be expanded into future community activations.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-card-inner">
+            <h3>Lebron Lab</h3>
+            <p>Students compete to make the best and most accurate depiction of infamous Los Angeles Laker Lebron James</p>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-card-inner">
+            <h3>Siri Microcontroller Lab</h3>
+            <p>Participants were taught how to build and operate a raspberri pi LED circuit with Apple Siri</p>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-card-inner">
+            <h3>LA Maker Faire</h3>
+            <p>An Annual large-format demonstration environment for interactive AI, public outreach, and maker community engagement</p>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-card-inner">
+            <h3>South LA Robotics Information Seminars</h3>
+            <p>Information sessions focused on robotics pathways, AI awareness, and engineering exposure for local community members in South LA</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="interns" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Team</span>
+        <h2>Intern Network</h2>
+        <p>Mini LinkedIn-style profiles with graceful fallback loading when direct profile data is unavailable.</p>
+      </div>
+      <div class="intern-grid" id="internGrid"></div>
+    </section>
+
+    <section id="games" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Interactive</span>
+        <h2>Learn AI With Games!</h2>
+        <p>Two playful experiences that turn AI concepts into approachable interaction.</p>
+      </div>
+      <div class="games-grid">
+        <article class="glass-card game-panel reveal">
+          <div class="game-header">
+            <div>
+              <p class="panel-label">Game 1</p>
+              <h3>AI Connect Four</h3>
+            </div>
+            <button id="resetConnectFour" class="glass-chip" type="button">Reset Board</button>
+          </div>
+          <p class="game-copy">
+            Styled as an aqua glass board and powered by the provided WebAssembly build in `connect4_web-main/` when available, with an internal AI fallback if those generated files are unavailable.
+          </p>
+          <div class="connect-four-shell">
+            <div class="connect-four-status" id="connectFourStatus">Your move. Drop a blue disk.</div>
+            <div class="connect-four-board" id="connectFourBoard" role="grid" aria-label="Connect Four game board"></div>
+          </div>
+        </article>
+
+        <article class="glass-card game-panel reveal">
+          <div class="game-header">
+            <div>
+              <p class="panel-label">Game 2</p>
+              <h3>AI Prompt Painter</h3>
+            </div>
+            <button id="generatePromptArt" class="glass-chip" type="button">Generate</button>
+          </div>
+          <p class="game-copy">Type a prompt and watch a procedural canvas respond with a new composition based on the text.</p>
+          <div class="prompt-painter-controls">
+            <input id="promptInput" type="text" placeholder='Try "future city" or "AI brain"' aria-label="Prompt input">
+          </div>
+          <canvas id="promptPainterCanvas" width="520" height="360" aria-label="Prompt painter canvas"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section id="learn" class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Resources</span>
+        <h2>Immerse Yourself!</h2>
+        <p>Starter videos curated around introductory artificial intelligence concepts and real-world applications.</p>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading reveal">
+        <span class="section-kicker">Fun</span>
+        <h2>Words from XKCD:</h2>
+        <p>IYKYK lol</p>
+      </div>
+      <div class="glass-card xkcd-shell reveal">
+        <a  rel="noreferrer" class="xkcd-card">
+          <img src="./assets/ai%20(1).png" alt="AI humor meme about artificial intelligence and updog">
+        </a>
+        <a  rel="noreferrer" class="xkcd-card">
+          <img src="./assets/ai_research_2x.png" alt="AI humor meme about a Cleverbot conversation">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="sponsors" class="section-shell footer-shell">
+    <div class="section-heading reveal">
+      <span class="section-kicker">Sponsors</span>
+      <h2>Thanks to our sponsors</h2>
+      <p>USC Viterbi, Google, and community partners supporting inclusive AI outreach.</p>
+    </div>
+    <div class="sponsor-row reveal">
+      <div class="sponsor-logo">USC Viterbi</div>
+      <div class="sponsor-logo">Google</div>
+      <div class="sponsor-logo">Community Partners</div>
+    </div>
+  </footer>
+    <div class="window-statusbar" aria-hidden="true">
+      <span class="status-start"></span>
+      <span class="status-tray"></span>
+      <span class="status-tray"></span>
+      <span class="status-tray"></span>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="./scripts.js"></script>
+</body>
+</html>

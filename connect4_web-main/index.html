@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect 4 WebAssembly with AI (Fixed)</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+    #board { display: grid; gap: 4px; margin: 20px 0; }
+    .cell {
+      width: 50px; height: 50px;
+      background: #eee; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; cursor: pointer;
+    }
+    .R { background: red; }
+    .Y { background: gold; }
+  </style>
+</head>
+<body>
+  <h1>Connect 4 (Player vs AI)</h1>
+  <div>
+    <button onclick="resetGame()">Reset Game</button>
+  </div>
+  <div id="status">Loading...</div>
+  <div id="board"></div>
+  <script src="connect4.js"></script>
+  <script>
+    let gameModule = null;
+    const ydim = 6;
+    const xdim = 7;
+    const playerColors = ['R', 'Y'];
+    let gameOver = false;
+
+    function setStatus(msg) {
+      document.getElementById('status').textContent = msg;
+    }
+
+    function createBoardUI() {
+      const boardDiv = document.getElementById('board');
+      boardDiv.style.gridTemplateColumns = `repeat(${xdim}, 50px)`;
+      boardDiv.innerHTML = '';
+      for (let y = ydim - 1; y >= 0; y--) {
+        for (let x = 0; x < xdim; x++) {
+          const div = document.createElement('div');
+          div.className = 'cell';
+          div.dataset.x = x;
+          div.dataset.y = y;
+          div.addEventListener('click', () => handleMove(x));
+          boardDiv.appendChild(div);
+        }
+      }
+    }
+
+    function updateBoardUI() {
+      for (let y = 0; y < ydim; y++) {
+        for (let x = 0; x < xdim; x++) {
+          const val = gameModule._getCell(y, x);
+          const cell = document.querySelector(`.cell[data-x="${x}"][data-y="${y}"]`);
+          cell.className = 'cell';
+          if (val === 1) cell.classList.add('R');
+          if (val === 2) cell.classList.add('Y');
+        }
+      }
+    }
+
+    function handleMove(x) {
+        if (gameOver) return;
+
+        const y = gameModule._makeMove(x, 0);
+        if (y === -1) {
+            setStatus('Invalid move! Try another column.');
+            return;
+        }
+        updateBoardUI();
+
+        if (gameModule._checkWin(y, x, 0)) {
+            setStatus(`You Win!`);
+            gameOver = true;
+            return;
+        }
+
+        if (gameModule._checkDraw()) {
+            setStatus('Draw!');
+            gameOver = true;
+            return;
+        }
+
+        const aiMovePacked = gameModule._makeAIMoveWithPos(1);
+        if (aiMovePacked !== -1) {
+            updateBoardUI();
+            const aiY = aiMovePacked >> 8;
+            const aiX = aiMovePacked & 0xFF;
+
+            if (gameModule._checkWin(aiY, aiX, 1)) {
+            setStatus(`AI Wins!`);
+            gameOver = true;
+            return;
+            }
+
+            if (gameModule._checkDraw()) {
+            setStatus('Draw!');
+            gameOver = true;
+            return;
+            }
+        }
+
+        setStatus(`Your Turn (Red)`);
+        }
+
+
+    function resetGame() {
+      gameModule._resetBoard();
+      updateBoardUI();
+      gameOver = false;
+      setStatus("Your Turn (Red)");
+    }
+
+    createBoardUI();
+
+    Module().then(Module => {
+      gameModule = Module;
+      Module._initBoard(ydim, xdim);
+      resetGame();
+    });
+  </script>
+</body>
+</html>
